@@ -9,18 +9,28 @@ var height = Dimensions.get('window').height;
 
 
 const availableZipItems = [
-    { place: 'Hatyai', code: '90110' },
-    { place: 'Trang', code: '92000' },
     { place: 'Chiangmai', code: '50000' },
-    { place: 'Khonkaen', code: '40000' },
     { place: 'Chonburi', code: '20000' },
+    { place: 'Hatyai', code: '90110' },
+    { place: 'Khonkaen', code: '40000' }, 
+    { place: 'Khuan Ka Long', code: '91130' },
+    { place: 'Min Buri', code: '10510' },
+    { place: 'Muang Songkhal', code: '90000' },
+    { place: 'Trang', code: '92000' },
+    
+   
+    
 ]
+   
+    
+   
+    
 
 const ZipItem = ({ place, code, navigation }) => (
-    <TouchableHighlight activeOpacity={1.0} underlayColor="#87CEFA" onPress={() => navigation.navigate('Weather', { zipCode: code })}>
+    <TouchableHighlight activeOpacity={0.6} underlayColor="#87CEFA" onPress={() => navigation.navigate('Weather', { zipCode: code })}>
         <View style={styles.box}>
             <Text style={styles.city}>{place}</Text>
-            <Text style={styles.description}>  ({code})</Text>
+            <Text style={styles.description}> : {code}</Text>
         </View>
     </TouchableHighlight>
 )
@@ -44,32 +54,33 @@ export default function ZipCodeScreen(){
 
 const styles = StyleSheet.create({
     box: {
-        paddingTop: 0,
+        paddingTop: 5,
         paddingLeft: 0,
         flexDirection: 'row',
         alignItems: "center",
-        height: 60,
+        height: 80,
         width: width,
     },
 
-    place: {
-        paddingLeft: 16,
-        textAlign: 'left',
-        fontSize: 17,
+    city: {
+        paddingLeft: 125,
+        textAlign: 'center',
+        fontSize: 20,
         fontWeight: "bold",
-        color: "#000000",
+        color: "#708090",
 
     },
 
     temperature: {
         paddingLeft: 16,
         fontSize: 22,
-        color: "#000000",
+        color: "#00FF00",
     },
     
-    code: {
-        fontSize: 15,
-        color: "#000000",
+    description: {
+        fontSize: 20,
+        fontWeight: "bold",
+        color: "#CD853F",
     },
 
     weatherIcon: {

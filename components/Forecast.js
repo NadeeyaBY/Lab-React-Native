@@ -36,7 +36,7 @@ export default function Forecast(props) {
         <View >
             <StatusBar barStyle="auto" />
             <View style={styles.box} backgroundColor={setBoxColor(props.main,props.icon)}>
-               {/* <Text style={styles.topic}>{props.main}</Text>*/}
+                <Text style={styles.topic}>{props.main}</Text>
                <Image style={styles.weatherIcon} source={{ uri: img_url, }} />
                <Text style={styles.city} >{props.name}</Text>
                <Text>
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
         paddingBottom: 20,
         fontSize: 17,
         fontWeight: "bold",
-        color: "#ffffff",
+        color: "#FA8072",
     },
     city: {
         paddingTop: 16,
