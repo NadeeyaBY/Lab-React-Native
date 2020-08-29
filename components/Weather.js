@@ -16,6 +16,7 @@ export default function Weather(props) {
         country: '-',
     })
     
+    
     useEffect(() => {
 
         console.log(`fetching data with zipCode = ${props.zipCode}`)

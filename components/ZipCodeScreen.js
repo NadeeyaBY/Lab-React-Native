@@ -1,10 +1,11 @@
 import React from 'react';
-import { View , Text, StatusBar, Dimensions } from 'react-native';
-import { FlatList, TouchaleHighlight } from "react-native-gesture-handler";
-import { useNavigation } from "@react-natigetion/native";
-//import WeatherScreen from './WeatherScreen';
+import { View , Text, StatusBar,StyleSheet, Dimensions } from 'react-native';
+import { FlatList, TouchableHighlight } from "react-native-gesture-handler";
+import { useNavigation } from "@react-navigation/native";
+import WeatherScreen from './WeatherScreen';
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
+
 
 
 const availableZipItems = [
@@ -15,12 +16,11 @@ const availableZipItems = [
     { place: 'Chonburi', code: '20000' },
 ]
 
-const ZipItem = ({place, code, navigation}) => (
-    <TouchableHighlight activeOpacity={0.6} underlayColor="#EOFFFF" onPress={() => navigation.navigate('weather',{zipCode: code}) }  >
-     
-        <View style={ style.box}>
-            <Text style={styles.place}>{place}</Text>
-            <Text sytle={styles.code}>{code}</Text>
+const ZipItem = ({ place, code, navigation }) => (
+    <TouchableHighlight activeOpacity={1.0} underlayColor="#87CEFA" onPress={() => navigation.navigate('Weather', { zipCode: code })}>
+        <View style={styles.box}>
+            <Text style={styles.city}>{place}</Text>
+            <Text style={styles.description}>  ({code})</Text>
         </View>
     </TouchableHighlight>
 )
@@ -82,7 +82,4 @@ const styles = StyleSheet.create({
         alignItems: "center",
     }
 
-
-
-   
 });

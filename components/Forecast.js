@@ -26,15 +26,16 @@ export default function Forecast(props) {
             }
         }
     }
+    
 
-    var img_url = 'https://github.com/NadeeyaBY/img/${props.icon}.png'
+    var img_url = 'https://github.com/NadeeyaBY/Lab-React-Native/tree/master/components/forecastImage/${props.icon}.png'
 
 
 
     return (
         <View >
             <StatusBar barStyle="auto" />
-            <View style={styles.box} backgroundColor={setBoxColor(props.main,propsicon)}>
+            <View style={styles.box} backgroundColor={setBoxColor(props.main,props.icon)}>
                {/* <Text style={styles.topic}>{props.main}</Text>*/}
                <Image style={styles.weatherIcon} source={{ uri: img_url, }} />
                <Text style={styles.city} >{props.name}</Text>
