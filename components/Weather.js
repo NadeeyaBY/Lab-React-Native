@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Forecast from './Forecast';
-import { View,StatusBar } from 'react-native';
+import { View,StatusBar, ImageBackground ,StyleSheet} from 'react-native';
 import { useNavigation } from "@react-navigation/native";
  
 
@@ -41,10 +41,20 @@ export default function Weather(props) {
     return (
         
         <View>
-           <StatusBar barStyle="auto" />
-            <Forecast {...forecastInfo} /> 
+            <ImageBackground source={require('../night.jpg')} style={styles.backdrop}>
+                <StatusBar barStyle="auto" />
+                <Forecast {...forecastInfo} /> 
+            </ImageBackground>
         </View>
         
         
     );
 }
+const styles = StyleSheet.create({
+    backdrop: {
+    alignItems: 'center',
+    width: '100%',
+    height: '100%'
+    },
+});
+   
