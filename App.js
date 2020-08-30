@@ -14,9 +14,11 @@ export default function App() {
   
     <NavigationContainer>
     
-      <Stack.Navigator>
-        <Stack.Screen name=  "Home" component={ZipCodeScreen} /> 
-        <Stack.Screen name=  "Weather" component={WeatherScreen} />        
+      <Stack.Navigator >
+        <Stack.Screen  name =  "Home" component={ZipCodeScreen} /> 
+        <Stack.Screen  name =  "Weather" component={WeatherScreen} />
+        
+                
        </Stack.Navigator>
 
     </NavigationContainer>
@@ -25,4 +27,3 @@ export default function App() {
 
   );
 }
-

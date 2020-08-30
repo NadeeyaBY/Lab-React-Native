@@ -2,7 +2,7 @@ import React from 'react';
 import { View , Text, StatusBar,StyleSheet, Dimensions, ImageBackground } from 'react-native';
 import { FlatList, TouchableHighlight } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
-import WeatherScreen from './WeatherScreen';
+//import WeatherScreen from './WeatherScreen';
 
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
@@ -79,8 +79,6 @@ const styles = StyleSheet.create({
         color: "#7FFFD4",
 
     },
-
-    
     
     description: {
         fontSize: 20,

@@ -18,10 +18,11 @@ export default function Weather(props) {
     
     
     useEffect(() => {
-
-        console.log(`fetching data with zipCode = ${props.zipCode}`)
+        
+        console.log(`fetching data with zipCode = ${props.zipCode}`) 
+        
         if (props.zipCode) {
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${props.zipCode},th&units=metric&APPID=08e42a7aa9292eca7c6b47b226f90ad2`)
+            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${props.zipCode},th&units=metric&APPID=08e42a7aa9292eca7c6b47b226f90ad2`,)
             .then((response) => response.json())
             .then((json) => {
                 setForecastInfo({
@@ -38,10 +39,14 @@ export default function Weather(props) {
             });
         }
     }, [props.zipCode])
+
+
     return (
-        
+       
         <View>
-            <ImageBackground source={require('../night.jpg')} style={styles.backdrop}>
+            
+            <ImageBackground source={require('../n1.jpg')} style={styles.backdrop}>
+            
                 <StatusBar barStyle="auto" />
                 <Forecast {...forecastInfo} /> 
             </ImageBackground>
@@ -56,5 +61,11 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%'
     },
+
+    weatherIcon: {
+        width: 128,
+        height: 128,
+    },
+
 });
    
