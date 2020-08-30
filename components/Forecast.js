@@ -28,7 +28,7 @@ export default function Forecast(props) {
     }
     
 
-    var img_url = 'https://github.com/NadeeyaBY/Lab-React-Native/tree/master/components/forecastImage/${props.icon}.png'
+    var img_url = "https://github.com/NadeeyaBY/Lab-React-Native/tree/master/components/forecastImage"
 
 
 

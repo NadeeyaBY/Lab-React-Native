@@ -1,8 +1,9 @@
 import React from 'react';
-import { View , Text, StatusBar,StyleSheet, Dimensions } from 'react-native';
+import { View , Text, StatusBar,StyleSheet, Dimensions, ImageBackground } from 'react-native';
 import { FlatList, TouchableHighlight } from "react-native-gesture-handler";
 import { useNavigation } from "@react-navigation/native";
 import WeatherScreen from './WeatherScreen';
+
 var width = Dimensions.get('window').width;
 var height = Dimensions.get('window').height;
 
@@ -21,9 +22,7 @@ const availableZipItems = [
    
     
 ]
-   
-    
-   
+
     
 
 const ZipItem = ({ place, code, navigation }) => (
@@ -39,20 +38,30 @@ const _keyExtractor = item => item.code
 
 export default function ZipCodeScreen(){
     const navigation = useNavigation()
+    
     return (
         <View>
-            <StatusBar barstyle="auto" />
-            <FlatList
-                data={availableZipItems}
-                keyExtractor={_keyExtractor}
-                renderItem={({item}) => <ZipItem {...item} navigation={navigation}/>}
-            />
+           
+           <ImageBackground source={require('../day.jpg')} style={styles.backdrop}>    
+                <StatusBar barstyle="auto" />
+                <FlatList data={availableZipItems}
+                    keyExtractor={_keyExtractor}
+                    renderItem={({item}) => <ZipItem {...item} navigation={navigation}/>}
+                /> 
+            </ImageBackground>
+                    
             
         </View>
     );
 }
 
 const styles = StyleSheet.create({
+    backdrop: {
+        alignItems: 'center',
+        width: '100%',
+        height: '100%'
+    },
+
     box: {
         paddingTop: 5,
         paddingLeft: 0,
@@ -67,20 +76,16 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 20,
         fontWeight: "bold",
-        color: "#708090",
+        color: "#7FFFD4",
 
     },
 
-    temperature: {
-        paddingLeft: 16,
-        fontSize: 22,
-        color: "#00FF00",
-    },
+    
     
     description: {
         fontSize: 20,
         fontWeight: "bold",
-        color: "#CD853F",
+        color: "#FFFF00",
     },
 
     weatherIcon: {
